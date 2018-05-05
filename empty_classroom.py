@@ -10,7 +10,7 @@ def getEmptyClassroom(num,username,passwd):
     :param num: 如112会返回星期一第1、2节空闲教室。如果当前为周末，则返回下一星期的结果
     :return:
     '''
-    if time.strftime('%w',time.localtime(time.time())) == '6' or time.strftime('%w',time.localtime(time.time())) == '7':
+    if time.strftime('%w',time.localtime(time.time())) == '6' or time.strftime('%w',time.localtime(time.time())) == '0':
         week = 512
     else:
         week = 256
