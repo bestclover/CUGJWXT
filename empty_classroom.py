@@ -2,7 +2,7 @@ import re
 import time
 from login import login
 
-def getEmptyClassroom(num):
+def getEmptyClassroom(num,username,passwd):
     '''
     zcd：周数代表数。256为当前周，此后周数代表数为256*n（如J下一周为256*J2，下两周为256*3）
     xqj: 星期代表数。2表示星期二
@@ -41,12 +41,10 @@ def getEmptyClassroom(num):
         'queryModel.sortOrder': 'asc',
         'time': 1,
     }
-    ses = login('20171000737', '011619')
+    ses = login(username, passwd)
     res = ses.get(url1)
     res = ses.get(url2)
     res = ses.post(url3,data=data)
     pattern = re.compile(r'"cdmc":"([^艺媒楼\d{3,5}].*?)"')
     classRoom = re.findall(pattern, res.text)
-    print(classRoom)
-
-getEmptyClassroom('434')
+    return classRoom
