@@ -7,7 +7,7 @@ def getEmptyClassroom(num,username,passwd):
     zcd：周数代表数。256为当前周，此后周数代表数为256*n（如下一周为256*2，下两周为256*3）
     xqj: 星期代表数。2表示星期二
     jcd： 时间代表数之和。第一节为1，第二节为2，第三节为4，第四节为8，第五节为16，以此类推。如3则代表1+2,即第一节与第二节
-    :param num: 如112会返回星期一第1、2节空闲教室。如果当前为周末，则返回下一星期的结果
+    :param num: 如'112'会返回星期一第1、2节空闲教室。如果当前为周末，则返回下一星期的结果
     :return:
     '''
     if time.strftime('%w',time.localtime(time.time())) == '6' or time.strftime('%w',time.localtime(time.time())) == '5':
